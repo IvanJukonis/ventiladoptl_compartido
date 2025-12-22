@@ -165,6 +165,17 @@ sap.ui.define(
             arrayDatosAgrupados.push(datosAgrupados[cod]);
           }
 
+          // Ordenar arrayDatosAgrupados por CodInterno de forma ascendente
+          arrayDatosAgrupados.sort(function (a, b) {
+            if (a.CodInterno < b.CodInterno) {
+              return -1;
+            }
+            if (a.CodInterno > b.CodInterno) {
+              return 1;
+            }
+            return 0;
+          });
+
           // Mostrar el resultado final en la consola (solo para demostración)
           console.log(arrayDatosAgrupados);
           var arrayTotalesPorRuta = [];
